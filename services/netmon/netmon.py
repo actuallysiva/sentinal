@@ -18,7 +18,7 @@ def log(msg):
 
 def internet_ok():
     try:
-        requests.get("https://1.1.1.1", timeout=5)
+        requests.get("https://api.telegram.org", timeout=5)
         return True
     except:
         return False
