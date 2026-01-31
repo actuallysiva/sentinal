@@ -43,7 +43,16 @@ while True:
 
         for u in r.get("result", []):
             offset = u["update_id"] + 1
-            text = u["message"]["text"].strip()
+
+            msg = u.get("message")
+            if not msg:
+                continue
+
+            text = msg.get("text")
+            if not text:
+                continue
+
+            text = text.strip()
 
             if text.startswith("/add "):
                 url = text.split(" ", 1)[1]
@@ -60,5 +69,5 @@ while True:
             else:
                 send("❓ unknown command")
 
-    except Exception as e:
+    except Exception:
         time.sleep(5)
