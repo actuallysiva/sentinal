@@ -14,3 +14,15 @@ Design goals:
 Secrets required:
 - BOT_TOKEN
 - CHAT_ID
+
+
+## Running the bot
+
+Required environment variables:
+- BOT_TOKEN
+- CHAT_ID
+
+Start manually:
+
+```bash
+./start.sh
